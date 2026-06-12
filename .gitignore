@@ -16,7 +16,6 @@ backend/bin/
 backend/*.exe
 backend/*.test
 backend/*.out
-backend/.env
 
 # Editor directories and files
 .vscode/*
@@ -28,3 +27,4 @@ backend/.env
 *.njsproj
 *.sln
 *.sw?
+.env
