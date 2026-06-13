@@ -15,7 +15,7 @@ require (
 
 require (
 	cloud.google.com/go/auth v0.20.0 
-	cloud.google.com/go/auth/oauth2adapt v0.2.8
+	cloud.google.com/go/auth/oauth2adapt v0.2.8 
 	cloud.google.com/go/compute/metadata v0.9.0 
 	github.com/bytedance/gopkg v0.1.3 
 	github.com/bytedance/sonic v1.15.0 
@@ -67,7 +67,10 @@ require (
 	golang.org/x/sync v0.21.0 
 	golang.org/x/sys v0.45.0 
 	golang.org/x/text v0.37.0 
+	golang.org/x/time v0.15.0 
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260526163538-3dc84a4a5aaa 
 	google.golang.org/grpc v1.81.1 
 	google.golang.org/protobuf v1.36.11 
+	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc 
+	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df 
 )
