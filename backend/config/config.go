@@ -41,22 +41,23 @@ func getEnv(key, defaultVal string) string {
 }
 
 func ConnectMongo(cfg *Config) *mongo.Database {
-    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-    defer cancel()
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
 
-    client, err := mongo.Connect(ctx, options.Client().ApplyURI(cfg.MongoURI))
-    if err != nil {
-        log.Fatalf("MongoDB connect error: %v", err)
-    }
+	log.Printf("🔌 Connecting to MongoDB: %s", cfg.MongoURI)
 
-    if err := client.Ping(ctx, nil); err != nil {
-        log.Fatalf("MongoDB ping error: %v", err)
-    }
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(cfg.MongoURI))
+	if err != nil {
+		log.Fatalf("MongoDB connect error: %v", err)
+	}
 
-    log.Println("✅ MongoDB connected")
-    return client.Database("cinema")
+	if err := client.Ping(ctx, nil); err != nil {
+		log.Fatalf("MongoDB ping error: %v", err)
+	}
+
+	log.Println("✅ MongoDB connected")
+	return client.Database("cinema")
 }
-
 func ConnectRedis(cfg *Config) *redis.Client {
     rdb := redis.NewClient(&redis.Options{
         Addr:     cfg.RedisAddr,
